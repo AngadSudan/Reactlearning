@@ -1,0 +1,1 @@
+The basic information file for the documentation of the learning repository
