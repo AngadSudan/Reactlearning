@@ -2,7 +2,7 @@ import React from "react";
 
 function Card({username}){
     return(
-        <div>card</div>
+        <div>{username}</div>
     )
 }
 export default Card
