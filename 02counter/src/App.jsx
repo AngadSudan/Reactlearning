@@ -4,11 +4,15 @@ function App() {
     const [counter, setCounter]= useState(0);
     const add=()=>{
       console.log("counter value to", Math.random());
-      setCounter(counter+1);
+      if(counter<20){
+        setCounter(counter+1);
+      }
     }
     const subtract=()=>{
       console.log("counter value is", Math.random()); 
-      setCounter(counter-1);
+      if(counter>=1){
+        setCounter(counter-1);
+      }
     }
   return (
     <>
