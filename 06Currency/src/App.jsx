@@ -47,7 +47,7 @@ function App() {
           label="To"
           amount={convert}
           currencyOptions={options} 
-          onCurrencyChange={(currency)=>{setTo(amount)}}
+          onCurrencyChange={(currency)=>{setTo(currency)}}
           SelectCurrency={to}
           onAmountChange={(amount)=>{setconvert(amount)}}
           amountDisable
