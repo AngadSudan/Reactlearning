@@ -4,7 +4,7 @@ import UserContextProvider from "../Context/UseContextProvider";
 function Login(){
     const [username, setUsername]= useContext('');
     const [password, setPassword]= useContext('');
-    const [setLevel]= useContext(UserContext);
+    const [setUser]= useContext(UserContext);
     const handleSubmit=(e)=>{
         e.preventDefault();
         setUser({username,password});
