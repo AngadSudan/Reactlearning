@@ -12,9 +12,9 @@ function Login() {
     const checkuser=(e)=>{
         e.preventDefault();
         if(!localStorage.getItem(username)){
-            alert('No Such User Found. Kindly Sign up')
-        }else if(localStorage.getItem(username)!== password){
-          alert("you have entered the wrong password.")
+            localStorage.setItem(username,password);
+        }else{
+            alert("useralready exists, kindly login")
         }
     }
   return (
@@ -22,7 +22,7 @@ function Login() {
         <form  onSubmit={checkuser} className='flex flex-col h-[25rem] w-[25rem] p-16  border-slate-300 border-2 ' >
             <input type="text" value={username} onChange={updateuser} placeholder='email' className='h-[15%] rounded-sm mb-8 border-slate-400 border-2' />
             <input type="password" value={password} onChange={updatepassword} placeholder='password' className='h-[15%] rounded-sm mb-8 border-slate-400 border-2' />
-            <button type='submit'className='rounded-md bg-black text-white h-[3rem]'>Log in</button>
+            <button type='submit'className='rounded-md bg-black text-white h-[3rem]'>Sign Up</button>
         </form>
     </div>
   )
