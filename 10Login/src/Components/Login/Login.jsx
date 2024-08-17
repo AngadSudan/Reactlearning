@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function Login() {
     const [username,setuser]= useState('');
     const [password,setpassword]= useState('');
+    const [message,setmessage] = useState('');
     const updateuser=(e)=>{
         setuser(e.target.value);
     }
@@ -12,10 +13,14 @@ function Login() {
     const checkuser=(e)=>{
         e.preventDefault();
         if(!localStorage.getItem(username)){
+            setmessage("user doesn't exist. Sign up")
             alert('No Such User Found. Kindly Sign up')
+
         }else if(localStorage.getItem(username)!== password){
-          alert("you have entered the wrong password.")
+            setmessage("wrong password")
+            alert("you have entered the wrong password.")
         }
+        setmessage('Login Successful')
     }
   return (
     <div className='flex h-screen w-[100%] justify-center align-middle pt-24  '>
@@ -23,6 +28,7 @@ function Login() {
             <input type="text" value={username} onChange={updateuser} placeholder='email' className='h-[15%] rounded-sm mb-8 border-slate-400 border-2' />
             <input type="password" value={password} onChange={updatepassword} placeholder='password' className='h-[15%] rounded-sm mb-8 border-slate-400 border-2' />
             <button type='submit'className='rounded-md bg-black text-white h-[3rem]'>Log in</button>
+            <span>{message}</span>
         </form>
     </div>
   )

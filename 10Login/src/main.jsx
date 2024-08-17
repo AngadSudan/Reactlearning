@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDOM from 'react-dom/client'
 import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from "react-router-dom"
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client' 
-import Login from "./Components/Login/Login";
-import Signup from "./Components/SignUp/Signup";
-import Layout from "./Components/Layout/Layout";
+import {Login,Signup,Layout} from './Components/index.js'
 const router= createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout/>} >

@@ -1,10 +1,11 @@
 import React from 'react'
 import {Outlet} from "react-router-dom"
 import { Link,NavLink } from 'react-router-dom'
+import Header from '../Header/Header'
 function Layout() {
   return (
     <>
-        <h1>Let's see how you do</h1>
+        <Header/>
         <Outlet/>
     </>
   )
