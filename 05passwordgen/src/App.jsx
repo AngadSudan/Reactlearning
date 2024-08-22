@@ -11,6 +11,8 @@ function App() {
     passwordRef.current?.select()
     window.navigator.clipboard.writeText(password)
   },[password]);
+
+
   const generatePassword=useCallback(()=>{
     let pass="";
     let string="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -25,6 +27,7 @@ function App() {
     setPassword(pass);
   },[length,num,character,setPassword]);
 
+  
   useEffect(() => { generatePassword()},[length,num,character, generatePassword]);
   return (
     <>

@@ -2,8 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-image: url('https://imgs.search.brave.com/Hc8e0_EtTo_ciAc6rFNXmdRfO2S5tlV2TVvaUU33RJw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzLzJhNy9wb2xs/eS1iYWNrZ3JvdW5k/LTE2MzE2NTEuanBn/P2ZtdA');
-  background-size:cover;
-  background-position: center;
-}
+
