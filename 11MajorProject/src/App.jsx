@@ -1,13 +1,30 @@
-import React from 'react'
-
+import React, { useState, useEffect} from 'react'
+import {useDispatch} from "react-redux"
+import authService from "./Appwrite/Auth"
+import {login,logout} from "./store/authSlice"
+import Layout from './Components/layout'
 function App() {
-  const variables= import.meta.env.VITE_APPWRITE_URL;
-  
-  return (
-    <div>
-      <h1> A blog with appwrite , the key is : {variables}</h1>
+  const [loading,setLoading]= useState(true);
+  const dispatch= useDispatch();
+  useEffect(()=>{
+    authService.currentUser()
+    .then((data)=>{
+      if(data){
+        dispatch(login({data}))
+      }else{
+        dispatch(logout())
+      }
+    })
+    .finally(()=>setLoading(false))
+  },[])
+
+  return !loading? (
+    <>
+    <div className='w-screen h-full'>
+      <Layout/>
     </div>
-  )
+    </>
+  ):null
 }
 
 export default App
